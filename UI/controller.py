@@ -15,7 +15,8 @@ class Controller:
 
 
     def handle_graph(self, e):
-        pass
+        self._model.creaGrafo(self._view._ddcolor.value)
+        print(self._model.getNumNodes())
 
 
 
@@ -25,3 +26,9 @@ class Controller:
 
     def handle_search(self, e):
         pass
+
+    def fillColors(self):
+        colori = self._model.getColors()
+        for c in colori:
+            self._view._ddcolor.options.append(ft.dropdown.Option(c))
+
